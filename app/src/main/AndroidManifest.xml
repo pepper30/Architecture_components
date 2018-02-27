@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".viewModel_VM.ChronometerViewModelActivity" />
+        <activity android:name=".Room_Persistance.UserActivity"></activity>
     </application>
 
 </manifest>
