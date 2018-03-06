@@ -1,25 +1,32 @@
-package megha.mvvm_arch.Room_Persistance;
+package megha.mvvm_arch.Room_Persistence;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 /**
- * Created by Megha Chauhan on 26-Feb-18.
+ * Created by Megha Chauhan on 01-Mar-18.
  */
 @Entity(tableName = "user")
 public class UserEntity {
+
     @PrimaryKey(autoGenerate = true)
     private int uid;
 
-    @ColumnInfo(name="first_Name")
-    private String firstName;
+    @ColumnInfo(name="firstName")
+    public String firstName;
 
-    @ColumnInfo(name="last_Name")
-    private String lastName;
+    @ColumnInfo(name="lastName")
+    public String lastName;
 
-    @ColumnInfo(name="Age")
-    private int age;
+    @ColumnInfo(name="age")
+   public String age;
+
+    public UserEntity(String firstName, String lastName, String age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
 
     public int getUid() {
         return uid;
@@ -45,12 +52,11 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
-
 }
